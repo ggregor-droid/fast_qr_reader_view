@@ -159,6 +159,7 @@ public class FastQrReaderViewPlugin implements MethodCallHandler, PluginRegistry
      * Plugin registration.
      */
     public static void registerWith(Registrar registrar) {
+        if(registrar.activity() == null)return;
         channel =
                 new MethodChannel(registrar.messenger(), "fast_qr_reader_view");
 
